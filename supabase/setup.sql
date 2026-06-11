@@ -42,6 +42,7 @@ create index if not exists idx_workers_district on workers(district_id);
 create index if not exists idx_workers_category on workers(category_id);
 create index if not exists idx_workers_status on workers(status);
 
+
 insert into cities (name)
 values ('Cusco'), ('Arequipa')
 on conflict (name) do nothing;

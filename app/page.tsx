@@ -69,6 +69,26 @@ export default function Home() {
   const [error, setError] = useState("");
 
   useEffect(() => {
+    const trackingKey = "ayni-home-view-tracked";
+
+    if (sessionStorage.getItem(trackingKey)) {
+      return;
+    }
+
+    sessionStorage.setItem(trackingKey, "true");
+
+    fetch("/api/track", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ path: "/" }),
+    }).catch(() => {
+      sessionStorage.removeItem(trackingKey);
+    });
+  }, []);
+
+  useEffect(() => {
     async function loadOptions() {
       setIsLoadingOptions(true);
       setError("");
@@ -187,7 +207,7 @@ export default function Home() {
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div className="space-y-3">
             <p className="text-sm font-medium uppercase tracking-wide text-emerald-700">
-              AYNI
+              LIWILAZO
             </p>
             <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
               Encuentra tecnicos disponibles
