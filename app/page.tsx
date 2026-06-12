@@ -293,22 +293,22 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-[#F8FAFC] text-[#111827]">
-      <section className="mx-auto flex w-full max-w-6xl flex-col gap-7 px-4 py-5 sm:px-6 lg:px-8">
-        <header className="overflow-hidden rounded-[2rem] bg-[#111827] px-5 py-6 text-white shadow-xl shadow-emerald-950/10 sm:px-8 sm:py-10">
-          <div className="flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between">
-            <div className="max-w-2xl space-y-5">
+      <section className="mx-auto flex w-full max-w-5xl flex-col gap-5 px-4 py-4 sm:px-6 lg:px-8">
+        <header className="overflow-hidden rounded-3xl bg-[#111827] px-5 py-6 text-white shadow-xl shadow-emerald-950/10 sm:px-7 sm:py-8">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-2xl space-y-4">
               <Badge className="w-fit bg-white/10 text-white">
                 <BadgeCheck className="h-3.5 w-3.5" />
-                Tecnicos locales verificados por la comunidad
+                Trabajadores locales verificados por la comunidad
               </Badge>
               <div className="space-y-3">
                 <p className="text-sm font-bold uppercase tracking-[0.25em] text-emerald-300">
-                  LIWILAZO
+                  TU CHOLO DE CONFIANZA
                 </p>
-                <h1 className="text-4xl font-black tracking-tight sm:text-5xl lg:text-6xl">
-                  Encuentra tecnicos confiables cerca de ti
+                <h1 className="text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl">
+                    Encuentra profesionales confiables cerca de ti
                 </h1>
-                <p className="max-w-xl text-base leading-7 text-zinc-200 sm:text-lg">
+                <p className="max-w-xl text-base leading-7 text-zinc-200">
                   Electricistas, gasfiteros, cerrajeros, mecanicos y mas.
                 </p>
               </div>
@@ -316,7 +316,7 @@ export default function Home() {
                 <Button asChild size="lg" className="w-full sm:w-auto">
                   <a href="#buscar">
                     <Search className="h-5 w-5" />
-                    Buscar tecnicos
+                    Buscar profesional
                   </a>
                 </Button>
                 <Button
@@ -333,18 +333,19 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-3 rounded-3xl bg-white/10 p-3 text-center backdrop-blur">
-              <div className="rounded-2xl bg-white p-3 text-[#111827]">
-                <p className="text-2xl font-black">{cities.length || 2}</p>
+            <div className="grid grid-cols-3 gap-2 rounded-2xl bg-white/10 p-2 text-center backdrop-blur">
+              <div className="rounded-xl bg-white p-3 text-[#111827]">
+                <p className="text-xl font-black">{cities.length || 2}</p>
                 <p className="text-xs font-semibold text-zinc-500">Ciudades</p>
               </div>
-              <div className="rounded-2xl bg-white p-3 text-[#111827]">
-                <p className="text-2xl font-black">{categories.length || 7}</p>
+              <div className="rounded-xl bg-white p-3 text-[#111827]">
+                <p className="text-xl font-black">{categories.length || 7}</p>
                 <p className="text-xs font-semibold text-zinc-500">Rubros</p>
               </div>
-              <div className="rounded-2xl bg-white p-3 text-[#111827]">
-                <p className="text-2xl font-black">{workers.length}</p>
-                <p className="text-xs font-semibold text-zinc-500">Tecnicos</p>
+              <div className="rounded-xl bg-white p-3 text-[#111827]">
+                <p className="text-xl font-black">{workers.length}</p>
+                <p className="text-xs font-semibold text-zinc-500">Profesionales
+                </p>
               </div>
             </div>
           </div>
@@ -359,7 +360,7 @@ export default function Home() {
                   Elige ciudad, distrito y rubro.
                 </p>
               </div>
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#DCFCE7] text-[#15803D]">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#DCFCE7] text-[#15803D]">
                 <Search className="h-5 w-5" />
               </div>
             </div>
@@ -373,7 +374,7 @@ export default function Home() {
                     updateFilter("city_id", event.target.value)
                   }
                   disabled={isLoadingOptions}
-                  className="h-13 rounded-2xl border border-[#E5E7EB] bg-[#F8FAFC] px-4 text-base font-medium outline-none transition focus:border-[#16A34A] focus:ring-4 focus:ring-[#16A34A]/10 disabled:bg-[#F3F4F6]"
+                  className="h-12 rounded-xl border border-[#E5E7EB] bg-[#F8FAFC] px-4 text-base font-medium outline-none transition focus:border-[#16A34A] focus:ring-4 focus:ring-[#16A34A]/10 disabled:bg-[#F3F4F6]"
                 >
                   <option value="">
                     {isLoadingOptions
@@ -398,7 +399,7 @@ export default function Home() {
                     updateFilter("district_id", event.target.value)
                   }
                   disabled={!filters.city_id || isLoadingDistricts}
-                  className="h-13 rounded-2xl border border-[#E5E7EB] bg-[#F8FAFC] px-4 text-base font-medium outline-none transition focus:border-[#16A34A] focus:ring-4 focus:ring-[#16A34A]/10 disabled:bg-[#F3F4F6]"
+                  className="h-12 rounded-xl border border-[#E5E7EB] bg-[#F8FAFC] px-4 text-base font-medium outline-none transition focus:border-[#16A34A] focus:ring-4 focus:ring-[#16A34A]/10 disabled:bg-[#F3F4F6]"
                 >
                   <option value="">
                     {filters.city_id
@@ -421,7 +422,7 @@ export default function Home() {
                     updateFilter("category_id", event.target.value)
                   }
                   disabled={isLoadingOptions}
-                  className="h-13 rounded-2xl border border-[#E5E7EB] bg-[#F8FAFC] px-4 text-base font-medium outline-none transition focus:border-[#16A34A] focus:ring-4 focus:ring-[#16A34A]/10 disabled:bg-[#F3F4F6]"
+                  className="h-12 rounded-xl border border-[#E5E7EB] bg-[#F8FAFC] px-4 text-base font-medium outline-none transition focus:border-[#16A34A] focus:ring-4 focus:ring-[#16A34A]/10 disabled:bg-[#F3F4F6]"
                 >
                   <option value="">
                     {isLoadingOptions
@@ -453,9 +454,6 @@ export default function Home() {
               <p className="text-sm font-bold uppercase tracking-wide text-[#16A34A]">
                 Resultados
               </p>
-              <h2 className="text-2xl font-black tracking-tight">
-                Tecnicos disponibles
-              </h2>
             </div>
             <Badge variant="muted">{workers.length} encontrados</Badge>
           </div>
@@ -477,17 +475,17 @@ export default function Home() {
                 return (
                   <Card
                     key={worker.id}
-                    className="group flex min-h-72 flex-col justify-between hover:-translate-y-1 hover:shadow-xl hover:shadow-zinc-200/80"
+                    className="group flex min-h-60 flex-col justify-between hover:-translate-y-1 hover:shadow-xl hover:shadow-zinc-200/80"
                   >
                     <CardHeader>
                       <div className="flex items-start gap-4">
                         <div
-                          className={`flex h-13 w-13 shrink-0 items-center justify-center rounded-2xl ${categoryStyle.iconClassName}`}
+                          className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${categoryStyle.iconClassName}`}
                         >
-                          <Icon className="h-6 w-6" />
+                            <Icon className="h-5 w-5" />
                         </div>
                         <div className="min-w-0 flex-1">
-                          <h3 className="truncate text-xl font-black">
+                          <h3 className="truncate text-lg font-black">
                             {worker.full_name}
                           </h3>
                           <div className="mt-2 flex flex-wrap gap-2">

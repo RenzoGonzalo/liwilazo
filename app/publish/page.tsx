@@ -59,7 +59,7 @@ function FieldLabel({
 }
 
 const inputClassName =
-  "h-13 rounded-2xl border border-[#E5E7EB] bg-[#F8FAFC] px-4 text-base font-medium outline-none transition focus:border-[#16A34A] focus:ring-4 focus:ring-[#16A34A]/10 disabled:bg-[#F3F4F6]";
+  "h-12 rounded-xl border border-[#E5E7EB] bg-[#F8FAFC] px-4 text-base font-medium outline-none transition focus:border-[#16A34A] focus:ring-4 focus:ring-[#16A34A]/10 disabled:bg-[#F3F4F6]";
 
 export default function PublishPage() {
   const [form, setForm] = useState<FormState>(initialFormState);
@@ -175,7 +175,7 @@ export default function PublishPage() {
 
   return (
     <main className="min-h-screen bg-[#F8FAFC] text-[#111827]">
-      <section className="mx-auto flex w-full max-w-4xl flex-col gap-6 px-4 py-5 sm:px-6 lg:px-8">
+      <section className="mx-auto flex w-full max-w-3xl flex-col gap-5 px-4 py-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <Button asChild variant="ghost" size="sm" className="px-0">
             <Link href="/">
@@ -189,13 +189,13 @@ export default function PublishPage() {
           </Badge>
         </div>
 
-        <header className="rounded-[2rem] bg-[#111827] px-5 py-7 text-white shadow-xl shadow-emerald-950/10 sm:px-8 sm:py-10">
+        <header className="rounded-3xl bg-[#111827] px-5 py-6 text-white shadow-xl shadow-emerald-950/10 sm:px-7 sm:py-8">
           <div className="max-w-2xl space-y-4">
             <p className="text-sm font-bold uppercase tracking-[0.25em] text-emerald-300">
-              Publicar tecnico
+              Publicar profesional
             </p>
-            <h1 className="text-4xl font-black tracking-tight sm:text-5xl">
-              Registra un tecnico en AYNI
+            <h1 className="text-3xl font-black tracking-tight sm:text-4xl">
+              Registrate aqui
             </h1>
             <p className="max-w-xl text-base leading-7 text-zinc-200">
               Completa los datos principales para que clientes de Cusco y
@@ -204,7 +204,7 @@ export default function PublishPage() {
           </div>
         </header>
 
-        <Card className="p-5 shadow-lg shadow-zinc-200/60 sm:p-6">
+        <Card className="p-4 shadow-lg shadow-zinc-200/60 sm:p-5">
           <form onSubmit={handleSubmit} className="grid gap-5 sm:grid-cols-2">
             <label className="flex flex-col gap-2">
               <FieldLabel icon={UserRound}>Nombre completo</FieldLabel>
@@ -326,7 +326,7 @@ export default function PublishPage() {
                 onChange={(event) =>
                   updateField("description", event.target.value)
                 }
-                className="min-h-36 rounded-2xl border border-[#E5E7EB] bg-[#F8FAFC] px-4 py-4 text-base font-medium outline-none transition focus:border-[#16A34A] focus:ring-4 focus:ring-[#16A34A]/10"
+                className="min-h-32 rounded-xl border border-[#E5E7EB] bg-[#F8FAFC] px-4 py-4 text-base font-medium outline-none transition focus:border-[#16A34A] focus:ring-4 focus:ring-[#16A34A]/10"
                 placeholder="Describe su experiencia, servicios y disponibilidad."
               />
             </label>
@@ -351,7 +351,7 @@ export default function PublishPage() {
                 className="w-full sm:w-auto"
               >
                 <Send className="h-5 w-5" />
-                {isSubmitting ? "Guardando..." : "Registrar tecnico"}
+                {isSubmitting ? "Guardando..." : "Registrar profesional"}
               </Button>
             </div>
           </form>
